@@ -51,9 +51,9 @@ cd ..
 mkdir blastdb
 echo "makedb section"
 cd blastdb
-ln -s ../../data/drosophila_navigation.fasta
+ln -s ../../data/CX_prot.faa
 #make database
-makeblastdb -in drosophila_navigation.fasta  -out navigation.Aa -dbtype prot
+makeblastdb -in CX_prot.faa  -out CX.Aa -dbtype prot
 
 #blast
 cd ..
@@ -63,4 +63,4 @@ cd 3_blast
 ln -s ../2_gffread/parsed_lamarcki.faa
 # -evalue 1e-10
 #blast against beetle database
-blastp -query parsed_lamarcki.faa -db ../blastdb/navigation.Aa -out output.blastp -num_threads 40
+blastp -query parsed_lamarcki.faa -db ../blastdb/CX.Aa -out CX.blastp -num_threads 40
