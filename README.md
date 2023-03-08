@@ -32,6 +32,10 @@ Update your dependencies, if you do not already have the versions for these depe
 ```bash=
 conda install pip==21.3.1 wheel==0.37.1 setuptools==59.6.0
 ```
+
+## Known Error
+gffread not working in conda environment
+
 ## Usage
 
 a bash script will be used to produce the blast output file, but firstly the script needs to be activated.
