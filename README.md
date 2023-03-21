@@ -25,14 +25,14 @@ conda activate beetle_genome
 ```
 
 ### Dependencies
-The script runs with busco==BUSCO/5.3.1, quast==5.0.2, RepeatMasker==4.1.2-p1, genemark==4.71_lic, gffread==v0.12.7., blast==2.13.0+
+The script runs with busco==5.3.1, quast==5.0.2, RepeatMasker==4.1.2-p1, genemark==4.71_lic, gffread==v0.12.7., blast==2.13.0+
 
 Update your dependencies, if you do not already have the versions for these dependencies. You will need to install the conda-forge and bioconda channels on conda before installing the dependent softwares.
 ```bash=
 #install channels
 conda config --add channels conda-forge bioconda
 #install dependencies
-conda install busco==BUSCO/5.3.1, quast==5.0.2, RepeatMasker==4.1.2-p1, genemark==4.71_lic, gffread==v0.12.7., blast==2.13.0+
+conda install busco==5.3.1, quast==5.0.2, RepeatMasker==4.1.2-p1, genemark==4.71_lic, gffread==v0.12.7., blast==2.13.0+
 
 ```
 
