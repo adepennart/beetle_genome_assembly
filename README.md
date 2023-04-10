@@ -53,28 +53,15 @@ The script should be all ready to run.
 ```
 ### Input
 
-3 input files are used for this code, each with a example file provided.
+2 input files are used for this code.
 
--combined_haplotype.fna file
+-the combined haplotype fna file (pt_158_hifiasm20220817.bp.p_ctg.fasta)
 
--first_haplotype.fna file
-
--onthophagus_genome.fna file
-
--navigation.faa file
-
-DATA_TEST, is the actual datasheet, the first column is the sample number (1,2,...,n), the second column specifies the 'before condition (1)' and the 'after condition (2)' and the remaining columns are for the exit angles(0,355).
-
-DATE, is the day of the year, needed to correct the azimuth changes in a day accurately. The first column is the sample number (1,2,...,n), the second column specifies the 'before condition (1)' and the 'after condition (2)' and the remaining columns are for the dates(1-30). 
-
-TIME, is the time of day, needed when correcting for azimuth changes through a day. The first column is the sample number (1,2,...,n), the second column specifies the 'before condition (1)' and the 'after condition (2)' and the remaining columns are for the times(ie. 13:44). If running indoor experiments, or where azimuth is not changing, write the same time for the 'before' and 'after' condition.
+-the CX fruit fly faa file (CX_prot.faa)
 
 ### output
 
-2 types of output files will be created in the INPUT_OUTPUT folder.
+1 output file will be created.
 
--busco_outputfile.blastp
+-the blastp best matches against the CX protein file (CX.blastp)
 
-AZI_DATAFRAME, has 7 columns. The first column has the sample names, the second column has the mean vector length, the third has the difference in mean bearing, the fourth has the standard deviation value, the fifth has the angular deviation value, the sixth has the rayleigh test and the seventh has the sample size.
-
-PLOTS, are the circular plots showing difference in mean bearing with the appropriate angular deviation and mean vector. All sample points will be seen as dots on the circle.
