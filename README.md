@@ -17,10 +17,67 @@ cd Downloads/beetle_genome_assembly
 The script was run on a Swedish server callled Rackham hosted by Uppmax. 
 
 
-## Quality checking
+## *Quality checking
+*(quality checking steps added (22/04/2024))
+login to Rackham
 
-run busco and quast
-CHECK INSTRUCTIONS TO FOLLOW
+```bash=
+ssh user@rackham.uppmax.uu.se
+```
+### QUAST
+load modules
+```bash=
+module load bioinfo-tools
+module load quast/5.0.2
+```
+run quast
+```bash=
+./quast.py pt_158_hifiasm20220817.bp.p_ctg.fasta
+```
+### BUSCO
+load modules
+```bash=
+module load bioinfo-tools
+module load BUSCO/5.3.1
+```
+run busco
+```bash=
+#! /bin/bash -l
+
+#SBATCH -p node -n 1 
+#SBATCH -t 1-00:00:00 
+#SBATCH -A your_project_name_here
+#SBATCH -J beetle_busco 
+
+# Variables used
+BUSCO_DIR=dir
+genome= pt_158_hifiasm20220817.bp.p_ctg.fasta
+
+cd $BUSCO_DIR
+
+#run with this
+#sbatch server.sh
+
+#-p devcore -n 1
+# -p devel 
+echo $(date +%s)
+echo $(date +%s) > timefile_busco.txt
+
+
+module load bioinfo-tools
+module load BUSCO/5.3.1
+source $AUGUSTUS_CONFIG_COPY
+
+echo "modules loaded and Augustus dir copied"
+
+#busco
+run_BUSCO.py -i $genome -l $BUSCO_LINEAGE_SETS/endopterygota_odb10 -o busco_output -m proteins -c 20
+echo "busco, quality control done"
+echo $(date +%s)
+echo $(date +%s) >> timefile_busco.txt
+```
+
+
 
 ## MAKER round 1
 
